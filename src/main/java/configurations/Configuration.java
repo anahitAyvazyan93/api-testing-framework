@@ -13,7 +13,7 @@ public class Configuration {
     static {
         try {
             Properties prop = new Properties();
-            InputStream inputStream = Configuration.class.getClassLoader().getResourceAsStream("configurations.properties");
+            InputStream inputStream = Configuration.class.getClassLoader().getResourceAsStream("configuration.properties");
             prop.load(inputStream);
             DB_URL = System.getProperty("db.url", prop.getProperty("db.url"));
             DB_USERNAME = System.getProperty("db.username", prop.getProperty("db.username"));

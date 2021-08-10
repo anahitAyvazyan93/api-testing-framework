@@ -1,20 +1,19 @@
 package database;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import static configurations.Configuration.*;
 
 public class DatabaseConnector {
-    static Connection con;
 
-    public static void connectToDB() {
-        con = null;
+    public static Connection connectToDB() {
+        Connection con = null;
         try {
             Class.forName("org.postgresql.Driver");
-            con = DriverManager
-                    .getConnection(DB_URL,
-                            DB_USERNAME, DB_PASSWORD);
-
+            con = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
@@ -22,14 +21,6 @@ public class DatabaseConnector {
         }
         System.out.println("Opened database successfully");
 
-
-    }
-
-    public static void closeDBConnection(){
-        try {
-            con.close();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
+        return con;
     }
 }
