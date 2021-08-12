@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="suit">
+    <test name="users test">
+        <classes>
+            <class name="in.gorest.co.users.UsersTest"/>
+        </classes>
+    </test>
+</suite>
