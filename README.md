@@ -1,4 +1,4 @@
-#api-testing-framework
+# api-testing-framework
 
 This project is designed to test the Users API:  
 https://gorest.co.in/public/v1/users
@@ -11,7 +11,7 @@ Testing framework: TestNG
 
 Java library: REST Assured which provides a domain-specific language (DSL) for writing powerful, maintainable tests for RESTful APIs
 
-##How to run
+## How to run
 Before running tests please execute the following command to get the database up and running:
 
 ```
