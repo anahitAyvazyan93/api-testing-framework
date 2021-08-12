@@ -5,11 +5,13 @@ import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import objects.UserObject;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
 
 import java.util.UUID;
 
 import static configurations.Configuration.ACCESS_TOKEN;
 import static configurations.Configuration.BASE_URI;
+import static database.DatabaseInit.initDb;
 import static json.UserJson.userJson;
 
 public class BaseTest {
@@ -28,8 +30,13 @@ public class BaseTest {
         return uniqueID + "@mailinator.com";
     }
 
+    @BeforeSuite
+    public void initDatabase() throws Exception {
+        initDb();
+    }
+
     @BeforeClass
-    public void createRequestSpecification() throws Exception {
+    public void createRequestSpecification() {
 
         requestSpec = new RequestSpecBuilder().
                 setBaseUri(BASE_URI).
@@ -41,7 +48,6 @@ public class BaseTest {
                 addHeader("Authorization", "Bearer " + ACCESS_TOKEN).
                 setContentType(ContentType.JSON).
                 build();
-
 
         requestBody = getUserRequestBody();
     }

@@ -17,7 +17,7 @@ public class UsersTest extends BaseTest {
     private static String newUserId;
 
 
-    @Test(enabled = false)
+    @Test
     public void usersListTest() throws Exception {
 
             String responseString = given().
@@ -27,10 +27,11 @@ public class UsersTest extends BaseTest {
                     then().
                     assertThat().
                     statusCode(200).
-                    extract().asString();
+                    extract().
+                    body().asString();
 
         String jsonFromDB = convertDBToJson();
-        assertTrue(compareTwoJsonFiles(responseString, jsonFromDB));
+        assertTrue(compareTwoJsonFiles(responseString, jsonFromDB), "Response doesn't meet with DB data");
     }
 
     @Test(priority = 1)

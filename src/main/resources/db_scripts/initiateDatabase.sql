@@ -1,4 +1,6 @@
-CREATE TABLE IF NOT EXISTS users (
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE users (
 	id serial PRIMARY KEY,
 	"name" VARCHAR ( 50 ) NOT NULL,
 	email VARCHAR ( 255 ) UNIQUE NOT NULL,
@@ -6,25 +8,24 @@ CREATE TABLE IF NOT EXISTS users (
 	status Varchar (10) check (status in ('active','inactive'))
 );
 
-insert into users values
-    (2,'Chakravartee Achari','chakravartee_achari@lockman-collins.biz','male','inactive'),
-    (3,'Anil Nambeesan','nambeesan_anil@rice-pouros.net','male','inactive'),
-    (5,'Darshan Mehra DC','darshan_dc_mehra@bauch-ziemann.biz','male','active'),
-    (6,'Vidhya Mukhopadhyay','vidhya_mukhopadhyay@graham.com','female','inactive'),
-    (7,'Sarada Kocchar','sarada_kocchar@smitham.info','male','active'),
-    (8,'Rati Sethi','sethi_rati@terry.biz','female','inactive'),
-    (9,'Bhramar Jha','jha_bhramar@lynch.co','male','inactive'),
-    (18,'Mangala Ahuja MD','ahuja_mangala_md@miller.name','female','inactive'),
-    (19,'Aditeya Trivedi','trivedi_aditeya@ruecker.org','male','inactive'),
-    (20,'Chidananda Achari','achari_chidananda@russel.co','female','inactive'),
-    (21,'Chandira Iyer Esq.','esq_chandira_iyer@bartell.com','female','active'),
-    (23,'Guru Adiga DDS','guru_dds_adiga@schimmel-stehr.biz','female','active'),
-    (24,'Gemine Verma','verma_gemine@christiansen-pollich.io','female','active'),
-    (25,'Naveen Nambeesan','nambeesan_naveen@herzog.co','male','active'),
-    (26,'Bhooshit Talwar','talwar_bhooshit@wolff.net','male','inactive'),
-    (27,'Kanti Devar','kanti_devar@bogisich.net','female','active'),
-    (28,'Vaishvi Malik','vaishvi_malik@corwin.name','female','inactive'),
-    (29,'Trilok Patel','trilok_patel@douglas.biz','male','active'),
-    (30,'Trilok Bhat','bhat_trilok@kutch.biz','female','inactive'),
-    (31,'Aadrika Dubashi','dubashi_aadrika@corkery.name','male','inactive')
-    ON CONFLICT DO NOTHING;
+INSERT INTO users VALUES
+(2042,'Romeu da Silva','49f763f9@gmail.com','male','active'),
+(2051,'neha','sexyneha@gmail.com','female','active'),
+(60,'Chaturbhuj Devar','devar_chaturbhuj@veum.net','female','inactive'),
+(61,'Ekaparnika Mukhopadhyay','ekaparnika_mukhopadhyay@lueilwitz.org','male','active'),
+(63,'Anandamayi Malik','malik_anandamayi@ebert.name','male','active'),
+(64,'Ganak Namboothiri IV','namboothiri_iv_ganak@spinka-beier.io','male','inactive'),
+(65,'Fr. Suresh Ahluwalia','ahluwalia_fr_suresh@effertz.info','female','inactive'),
+(66,'Karthik Iyengar','karthik_iyengar@wiza.co','female','inactive'),
+(67,'Brahmdev Rana','brahmdev_rana@kris.com','female','inactive'),
+(68,'Kanak Tagore JD','kanak_jd_tagore@rowe-kovacek.info','male','active'),
+(69,'Chandra Mehrotra DDS','dds_mehrotra_chandra@funk-effertz.biz','female','inactive'),
+(70,'Bala Adiga','adiga_bala@ritchie-howe.org','male','active'),
+(71,'Ekdant Patel LLD','patel_lld_ekdant@baumbach.io','male','inactive'),
+(72,'Aanandaswarup Nair Jr.','nair_aanandaswarup_jr@senger-stokes.info','female','inactive'),
+(73,'Satish Asan','asan_satish@kris.biz','male','inactive'),
+(295,'Shiv Dhawan','dhawan_shiv@crooks.net','female','active'),
+(1287,'Natasha Romanov','nat50@marvel.com','female','active'),
+(6,'New Bhooshan Bhat','new_bhooshan_bhat@hodkiewicz.biz','male','active'),
+(8,'Gon Gon','gon@gon.com','female','active'),
+(11,'Hisoka Hisoka','hisoka@hisoka.com','female','inactive');
